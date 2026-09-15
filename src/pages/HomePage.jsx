@@ -12,7 +12,7 @@ export default function HomePage() {
 
   const homeFaqs = [
     { q: 'How do I give my measurements?', a: 'You can provide measurements by selecting a standard size on the app, uploading a custom measurement profile, or requesting our representative to pick up a perfect-fit sample garment from your doorstep.' },
-    { q: 'Do you pick up and deliver at my doorstep?', a: 'Yes! We offer doorstep pickup and delivery services across Lahore. Our rider will collect your unstitched fabric and deliver your perfectly stitched garments.' },
+    { q: 'Do you pick up and deliver at my doorstep? Is there a charge?', a: 'Yes, we offer doorstep pickup and delivery across Lahore. Please note: pickup and delivery are charged separately and are not included in the stitching price. Our rider collects your fabric from your address and delivers your finished garment back to you. Charges vary by area — confirm the exact fee via WhatsApp before booking.' },
     { q: 'How can I track my tailoring order?', a: 'Once your order is picked up, you can track every stage of the stitching process—from cutting and stitching to quality check and dispatch—in real-time on our mobile app.' },
     { q: 'What is your standard delivery time?', a: 'Our standard delivery time is 7 to 10 working days after fabric collection. We also offer express delivery services if you need your outfits sooner.' },
     { q: 'Can I choose my own neck and sleeve designs?', a: 'Absolutely! You can upload design reference photos or select from our curated catalog of necklines, sleeve designs, and daman borders directly in the app.' }

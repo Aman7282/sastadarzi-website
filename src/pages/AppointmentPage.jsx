@@ -357,6 +357,17 @@ export default function AppointmentPage({ setActivePage }) {
                 <h2 className="text-xl font-bold text-white font-serif">Pickup Location & Appointment Date</h2>
               </div>
 
+              {/* ⚡ PICKUP & DELIVERY CHARGE NOTICE */}
+              <div className="p-4 bg-amber-500/10 border border-amber-500/50 rounded-xl flex items-start gap-3 text-xs">
+                <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <p className="font-bold text-amber-400 uppercase tracking-wider">⚠️ Pickup & Delivery — Separate Charges Apply</p>
+                  <p className="text-amber-100/80 leading-relaxed">
+                    Doorstep fabric <strong>pickup</strong> and finished garment <strong>delivery</strong> are <strong>not included</strong> in the stitching price. Both are charged separately based on your area in Lahore. Please confirm the exact pickup & delivery fee with us via <strong>WhatsApp before finalising your order</strong>.
+                  </p>
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
                 <div className="md:col-span-2 space-y-2">
                   <label className="block font-bold text-gray-300 uppercase tracking-wider">Doorstep Pickup Address in Lahore *</label>

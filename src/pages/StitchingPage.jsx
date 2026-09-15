@@ -173,8 +173,13 @@ export default function StitchingPage() {
               Pickup & Delivery Available Across Lahore
             </h2>
             
+            <div className="p-3.5 bg-amber-500/10 border border-amber-500/40 rounded-xl text-xs text-amber-200 leading-relaxed">
+              <span className="font-bold text-amber-400 block mb-1">⚠️ Pickup & Delivery — Separate Charges Apply</span>
+              Fabric pickup and finished dress delivery to your home are <strong>not included</strong> in the stitching price. Both are billed separately based on your area. Please confirm the fee with us via WhatsApp before placing your order.
+            </div>
+
             <p className="text-gray-300 text-sm leading-relaxed">
-              We provide doorstep pickup and delivery across all major sectors including:
+              We cover all major Lahore sectors:
             </p>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-3.5 text-gray-300 font-semibold text-xs md:text-sm">

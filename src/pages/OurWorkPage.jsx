@@ -26,8 +26,8 @@ export default function OurWorkPage({ setActivePage }) {
       a: 'Yes, we specialize in stitching all unstitched luxury fabrics (lawn, chiffon, organza, velvet, and raw silk) with precise necklines, sleeve trims, daman borders, and inner lining.'
     },
     {
-      q: 'How can I request doorstep fabric pickup in Lahore?',
-      a: 'Click "Book Custom Stitching", select your address in Lahore (Gulberg, DHA, WAPDA Town, Johar Town, etc.), and our rider will collect your fabric right from your home.'
+      q: 'How can I request doorstep fabric pickup in Lahore? Is it free?',
+      a: 'Click "Book Custom Stitching", select your address in Lahore (Gulberg, DHA, WAPDA Town, Johar Town, etc.), and our rider will collect your fabric right from your home. Please note: doorstep pickup and delivery back to you are charged separately and are not included in the stitching price. Confirm the fee via WhatsApp before booking.'
     }
   ];
 
@@ -349,7 +349,7 @@ export default function OurWorkPage({ setActivePage }) {
               Best Ladies Tailor & Custom Stitching in Lahore
             </h2>
             <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-              We provide doorstep fabric pickup and custom ladies dress stitching across all top areas in Lahore.
+              We provide doorstep fabric pickup and custom ladies dress stitching across all top areas in Lahore. <span className="text-amber-400 font-semibold">Note: Pickup & delivery are charged separately from stitching fees.</span>
             </p>
           </div>
 

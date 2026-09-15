@@ -147,8 +147,12 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] font-serif">Doorstep Pickup & Delivery Across Lahore</h2>
+            <div className="p-3.5 bg-amber-500/10 border border-amber-500/40 rounded-xl text-xs text-amber-200 leading-relaxed">
+              <span className="font-bold text-amber-400 block mb-1">⚠️ Pickup & Delivery — Separate Charges Apply</span>
+              Doorstep fabric pickup and finished garment delivery are <strong>not included</strong> in the stitching price. Both services are charged separately based on your Lahore area. Confirm fees on WhatsApp before booking.
+            </div>
             <p className="text-gray-300 text-sm leading-relaxed font-semibold">
-              We provide doorstep pickup and delivery across all major sectors including:
+              We cover all major sectors in Lahore:
             </p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-gray-300 font-semibold text-sm">
               <div>• WAPDA Town</div>
