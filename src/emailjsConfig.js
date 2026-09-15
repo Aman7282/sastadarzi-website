@@ -4,9 +4,9 @@
 // ============================================================
 
 export const EMAILJS_CONFIG = {
-  PUBLIC_KEY: 'YOUR_PUBLIC_KEY',
-  SERVICE_ID: 'YOUR_SERVICE_ID',
-  ADMIN_TEMPLATE_ID: 'YOUR_ADMIN_TEMPLATE_ID',
-  USER_TEMPLATE_ID: 'YOUR_USER_TEMPLATE_ID',
+  PUBLIC_KEY: 'hqfz2w6dvrMbB62Bu',
+  SERVICE_ID: 'service_9mlgz6r',
+  ADMIN_TEMPLATE_ID: 'template_r4strkd',
+  USER_TEMPLATE_ID: 'template_ytxr4vn',
   ADMIN_EMAIL: 'sastadarzi@gmail.com',
 };
