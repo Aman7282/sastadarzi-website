@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageSquare } from 'lucide-react';
 
@@ -30,7 +30,7 @@ export default function PageHero({ tag, h1, lead, body, ctaLabel, ctaPath = '/bo
             </Link>
             {showWhatsapp && (
               <a
-                href="https://wa.me/923423748897?text=Hello%20SastaDarzi!"
+                href="https://wa.me/923158212978?text=Hello%20SastaDarzi!"
                 target="_blank" rel="noreferrer"
                 className="px-6 py-3.5 bg-green-600 hover:bg-green-500 text-white font-bold text-sm uppercase tracking-wide rounded-xl flex items-center gap-2 transition"
               >

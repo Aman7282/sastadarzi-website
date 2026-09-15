@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MessageSquare } from 'lucide-react';
 import FAQSection from '../components/FAQSection';
@@ -81,7 +81,7 @@ export default function CasualWearPage() {
               Book Casual Suit Stitching
             </Link>
             <a 
-              href="https://wa.me/923423748897?text=Hello%20SastaDarzi,%20I%20want%20to%20inquire%20about%20Casual%20Wear%20stitching." 
+              href="https://wa.me/923158212978?text=Hello%20SastaDarzi,%20I%20want%20to%20inquire%20about%20Casual%20Wear%20stitching." 
               target="_blank" 
               rel="noreferrer"
               className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded text-xs uppercase tracking-wider transition border border-emerald-400/30 flex items-center gap-2"
