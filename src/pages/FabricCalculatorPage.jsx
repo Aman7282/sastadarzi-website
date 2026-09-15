@@ -164,7 +164,7 @@ export default function FabricCalculatorPage({ setActivePage }) {
             </button>
 
             <a 
-              href={`https://wa.me/923158212978?text=Hello%20Sasta%20Darzi,%20I%20used%20your%20Fabric%20Calculator%20for%20${encodeURIComponent(garment)}%20and%20calculated%20${gaz}%20Gaz%20(${totalYards.toFixed(2)}%20Yards).%20I%20want%20to%20order%20stitching.`}
+              href={`https://wa.me/923423748897?text=Hello%20Sasta%20Darzi,%20I%20used%20your%20Fabric%20Calculator%20for%20${encodeURIComponent(garment)}%20and%20calculated%20${gaz}%20Gaz%20(${totalYards.toFixed(2)}%20Yards).%20I%20want%20to%20order%20stitching.`}
               target="_blank" 
               rel="noreferrer"
               className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition"

@@ -54,7 +54,7 @@ export default function AppointmentPage() {
       msg += `🏪 *Mode:* Visit Shop (WAPDA Town, Lahore)%0A`;
     }
     if (formData.designNotes) msg += `📝 *Notes:* ${formData.designNotes}%0A`;
-    return `https://wa.me/923158212978?text=${msg}`;
+    return `https://wa.me/923423748897?text=${msg}`;
   };
 
   const handleSubmit = async (e) => {

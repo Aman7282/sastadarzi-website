@@ -4,7 +4,7 @@ import { MessageSquare } from 'lucide-react';
 export default function WhatsAppFloating() {
   return (
     <a
-      href="https://wa.me/923158212978?text=Hello%20Sasta%20Darzi!%20I%20want%20to%20inquire%20about%20stitching/alteration%20services."
+      href="https://wa.me/923423748897?text=Hello%20Sasta%20Darzi!%20I%20want%20to%20inquire%20about%20stitching/alteration%20services."
       target="_blank"
       rel="noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl flex items-center justify-center group transition-all duration-300 hover:scale-110 border-2 border-white/20"

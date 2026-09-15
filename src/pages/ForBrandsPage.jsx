@@ -79,7 +79,7 @@ export default function ForBrandsPage() {
             </div>
 
             <a 
-              href={`https://wa.me/923158212978?text=Hello%20Sasta%20Darzi,%20I%20represent%20a%20brand/boutique%20and%20want%20to%20inquire%20about%20${encodeURIComponent(b.title)}.`}
+              href={`https://wa.me/923423748897?text=Hello%20Sasta%20Darzi,%20I%20represent%20a%20brand/boutique%20and%20want%20to%20inquire%20about%20${encodeURIComponent(b.title)}.`}
               target="_blank" 
               rel="noreferrer"
               className="w-full py-3 bg-[#D4AF37] text-black font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-yellow-500 transition text-center block"

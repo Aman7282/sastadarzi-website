@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CheckCircle2, ChevronRight, Star, Smartphone, QrCode, ExternalLink, X } from 'lucide-react';
+import { CheckCircle2, ChevronRight, Star, Smartphone, QrCode, Phone, X } from 'lucide-react';
 import FAQSection from '../components/FAQSection';
 import SEOHead from '../components/SEOHead';
 import { customerReviews, googleReviewsSummary } from '../data/reviewsData';
@@ -62,13 +62,11 @@ export default function HomePage() {
             <Link to="/services/custom-stitching-lahore" className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-white font-bold uppercase tracking-wider rounded text-sm transition-colors shadow-lg shadow-[#D4AF37]/20 inline-block">
               Book Custom Stitching
             </Link>
-            <a 
-              href="https://g.page/r/CYROPMqivftrEAI/review" 
-              target="_blank" 
-              rel="noreferrer" 
+            <a
+              href="tel:+923158212978"
               className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded text-sm transition-colors border border-emerald-400/40 flex items-center gap-2 shadow-lg"
             >
-              <ExternalLink className="w-4 h-4 text-white" /> Write Google Review
+              <Phone className="w-4 h-4 text-white" /> Call Now
             </a>
           </div>
         </div>

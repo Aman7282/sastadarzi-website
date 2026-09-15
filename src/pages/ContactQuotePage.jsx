@@ -40,7 +40,7 @@ export default function ContactQuotePage() {
     if (notes) msg += `📝 *Notes:* ${notes}%0A`;
     msg += `%0APlease share the process details and fabric pickup timing. Thank you!`;
 
-    const phone = '923158212978';
+    const phone = '923423748897';
     window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
   };
 
@@ -354,7 +354,7 @@ export default function ContactQuotePage() {
 
             <div className="pt-2">
               <a 
-                href="https://wa.me/923158212978?text=Hello%20Sasta%20Darzi,%20I%20want%20to%20consult%20for%20stitching."
+                href="https://wa.me/923423748897?text=Hello%20Sasta%20Darzi,%20I%20want%20to%20consult%20for%20stitching."
                 target="_blank" 
                 rel="noreferrer"
                 className="w-full py-3 bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2"
