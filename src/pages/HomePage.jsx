@@ -248,7 +248,7 @@ export default function HomePage() {
                 rel="noreferrer" 
                 className="text-xs text-[#D4AF37] hover:text-white flex items-center gap-1 font-bold underline ml-2"
               >
-                Visit Google Profile <ExternalLink className="w-3.5 h-3.5" />
+                Visit Google Profile <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
