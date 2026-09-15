@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { CheckCircle2, ChevronRight, ArrowRight, Star, Smartphone, QrCode, ShieldCheck, ExternalLink, Image as ImageIcon, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { CheckCircle2, ChevronRight, Star, Smartphone, QrCode, ExternalLink, X } from 'lucide-react';
 import FAQSection from '../components/FAQSection';
+import SEOHead from '../components/SEOHead';
 import { customerReviews, googleReviewsSummary } from '../data/reviewsData';
 
-export default function HomePage({ setActivePage }) {
+export default function HomePage() {
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
   const [showScreenshotModal, setShowScreenshotModal] = useState(false);
-
-  const navTo = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const navigate = useNavigate();
 
   const homeFaqs = [
     { q: 'How do I give my measurements?', a: 'You can provide measurements by selecting a standard size on the app, uploading a custom measurement profile, or requesting our representative to pick up a perfect-fit sample garment from your doorstep.' },
@@ -33,6 +31,13 @@ export default function HomePage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Sasta Darzi | Best Ladies Tailor in Lahore | Custom Dress Stitching & Alteration"
+        description="Sasta Darzi is Lahore's premier ladies tailor offering custom dress stitching, bridal lehenga tailoring, party wear, and doorstep fabric pickup across WAPDA Town, DHA, Gulberg, Johar Town & Model Town. Shop No 48 Ground Floor, Wapda, Rehmat Market, WAPDA Town Block K 1 Town, Lahore, 54770, Pakistan."
+        keywords="Ladies Tailor in Lahore, Best Ladies Tailor Near Me, Custom Dress Stitching WAPDA Town, Online Darzi Lahore, Boutique Stitching DHA Lahore, Gulberg Tailoring Services, Doorstep Tailor Johar Town, Ladies Alteration Service Lahore, Bridal Lehenga Tailor Lahore"
+        canonicalPath="/"
+      />
+
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         {/* Background Image & Overlay */}
@@ -48,15 +53,15 @@ export default function HomePage({ setActivePage }) {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white drop-shadow-md font-serif">
-            Ladies Tailoring Service,<br/>Quality You Can Trust
+            Best Ladies Tailor in Lahore,<br/>Quality You Can Trust
           </h1>
           <p className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            Every body deserves everyday wear — personalized to fit perfectly and seamlessly designed to elevate your everyday routines.
+            Every dress deserves perfection — custom ladies suit stitching, bridal couture, party wear, and doorstep fabric pickup in Lahore.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button onClick={() => navTo('stitching')} className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-white font-bold uppercase tracking-wider rounded text-sm transition-colors shadow-lg shadow-[#D4AF37]/20">
+            <Link to="/services/custom-stitching-lahore" className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-white font-bold uppercase tracking-wider rounded text-sm transition-colors shadow-lg shadow-[#D4AF37]/20 inline-block">
               Book Custom Stitching
-            </button>
+            </Link>
             <a 
               href="https://g.page/r/CYROPMqivftrEAI/review" 
               target="_blank" 
@@ -120,17 +125,21 @@ export default function HomePage({ setActivePage }) {
       <section className="py-24 px-6 bg-[#141414]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] font-serif">Stitching Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] font-serif">Ladies Tailoring Services</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { title: 'Custom Stitching', tag: 'Our Speciality', img: '/custom-stitching.png', link: 'stitching' },
-              { title: 'Alteration Services', tag: 'Our Speciality', img: '/alteration-service.png', link: 'alteration' },
-              { title: 'Bulk Stitching', tag: 'For Brands', img: '/tailor-workshop.png', link: 'brands' },
-              { title: 'Worldwide Delivery', tag: 'For Expats', img: '/worldwide-delivery.png', link: 'services' },
+              { title: 'Custom Suit Stitching', tag: 'Our Speciality', img: '/custom-stitching.png', link: '/services/custom-stitching-lahore' },
+              { title: 'Alteration Services', tag: 'Our Speciality', img: '/alteration-service.png', link: '/services/ladies-alteration-lahore' },
+              { title: 'Bulk Stitching', tag: 'For Brands', img: '/tailor-workshop.png', link: '/services/boutique-stitching-for-brands' },
+              { title: 'Worldwide Delivery', tag: 'For Expats', img: '/worldwide-delivery.png', link: '/services' },
             ].map((svc, i) => (
-              <div key={i} className="group relative rounded-xl overflow-hidden cursor-pointer h-[320px] bg-neutral-800" onClick={() => navTo(svc.link)}>
+              <div 
+                key={i} 
+                className="group relative rounded-xl overflow-hidden cursor-pointer h-[320px] bg-neutral-800" 
+                onClick={() => navigate(svc.link)}
+              >
                 <img src={svc.img} alt={svc.title} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/80" />
                 
@@ -145,14 +154,14 @@ export default function HomePage({ setActivePage }) {
           </div>
 
           <div className="text-center">
-            <button onClick={() => navTo('services')} className="px-8 py-3 bg-[#D4AF37] hover:bg-yellow-500 text-white font-bold uppercase tracking-wider rounded text-sm transition-colors">
+            <Link to="/services" className="px-8 py-3 bg-[#D4AF37] hover:bg-yellow-500 text-white font-bold uppercase tracking-wider rounded text-sm transition-colors inline-block">
               Explore all services
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 4. PICKUP & DELIVERY LAHORE WITH REAL RIDER PHOTO */}
+      {/* 4. PICKUP & DELIVERY LAHORE */}
       <section className="py-24 px-6 bg-[#1A1A1A]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
@@ -172,7 +181,7 @@ export default function HomePage({ setActivePage }) {
             </div>
             <div className="p-4 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl flex items-center justify-between">
               <span className="text-[#D4AF37] font-bold text-base">Doorstep Pickup & Delivery Across Lahore</span>
-              <button onClick={() => navTo('book-appointment')} className="px-4 py-2 bg-[#D4AF37] text-black font-bold text-xs rounded uppercase hover:bg-yellow-500 transition">Book Pickup</button>
+              <Link to="/book-ladies-tailor-appointment-lahore" className="px-4 py-2 bg-[#D4AF37] text-black font-bold text-xs rounded uppercase hover:bg-yellow-500 transition inline-block">Book Pickup</Link>
             </div>
           </div>
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -198,7 +207,6 @@ export default function HomePage({ setActivePage }) {
 
       {/* 5. HOW IT WORKS */}
       <section className="relative py-32 px-6 overflow-hidden">
-        {/* Background */}
         <div className="absolute inset-0 z-0">
           <img src="/tailor-workshop.png" alt="Working Tailor Workshop" className="w-full h-full object-cover opacity-20 filter grayscale" />
           <div className="absolute inset-0 bg-[#1A1A1A]/85 mix-blend-multiply" />
@@ -228,11 +236,10 @@ export default function HomePage({ setActivePage }) {
         </div>
       </section>
 
-      {/* 6. AUTHENTIC GOOGLE REVIEWS & TESTIMONIALS */}
+      {/* 6. GOOGLE REVIEWS */}
       <section className="py-24 px-6 bg-[#141414]">
         <div className="max-w-7xl mx-auto space-y-12">
           
-          {/* Reviews Header Banner */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="inline-flex flex-wrap items-center justify-center gap-3 bg-gradient-to-r from-blue-600/20 via-yellow-500/20 to-emerald-600/20 border border-[#D4AF37]/40 px-6 py-2.5 rounded-full">
               <span className="text-[#D4AF37] font-extrabold text-lg">{googleReviewsSummary.rating} ★</span>
@@ -301,7 +308,7 @@ export default function HomePage({ setActivePage }) {
             ))}
           </div>
 
-          {/* Carousel Controls & Direct Google Review Link Button */}
+          {/* Carousel Controls */}
           <div className="flex flex-wrap justify-between items-center gap-4 pt-4">
             <div className="flex items-center gap-3">
               <a 

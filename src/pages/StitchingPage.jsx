@@ -1,17 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
-export default function StitchingPage({ setActivePage }) {
-  const navTo = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+export default function StitchingPage() {
   const categories = [
     {
       id: 'bridal',
       title: 'Bridal Wear Stitching',
       img: '/cat-bridal.png',
+      path: '/services/bridal-lehenga-tailor-lahore',
       desc: 'Turn heads on your special day with our custom-fitted bridal stitching service. We handle intricate styles with the highest precision, including:',
       bullets: [
         'Traditional 16-kali lehengas',
@@ -25,6 +23,7 @@ export default function StitchingPage({ setActivePage }) {
       id: 'party',
       title: 'Party Wear Stitching',
       img: '/cat-party.png',
+      path: '/services/party-wear-stitching-lahore',
       desc: 'For your special events and formal gatherings, we craft stylish silhouettes like:',
       bullets: [
         'Pastel Maxis',
@@ -38,6 +37,7 @@ export default function StitchingPage({ setActivePage }) {
       id: 'casual',
       title: 'Casual Wear Stitching',
       img: '/cat-casual.png',
+      path: '/services/casual-suit-stitching-lahore',
       desc: 'Elevate your everyday style with neatly stitched 2-piece and 3-piece suits.',
       bullets: [
         'Straight shirts with cigarette pants',
@@ -50,6 +50,7 @@ export default function StitchingPage({ setActivePage }) {
       id: 'western',
       title: 'Western Wear Stitching',
       img: '/cat-western.png',
+      path: '/services/western-wear-tailor-lahore',
       desc: 'Look globally styled with our western wear stitching service:',
       bullets: [
         'Blazers, jumpsuits, and formal tops',
@@ -63,17 +64,27 @@ export default function StitchingPage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Custom Ladies Suit Stitching in Lahore | Sasta Darzi"
+        description="Custom ladies suit stitching in Lahore with doorstep pickup. Specialized tailoring for bridal lehengas, party wear maxis, lawn suits & western wear."
+        keywords="Custom Ladies Suit Stitching Lahore, Shalwar Kameez Tailor Lahore, Best Ladies Tailor in Lahore, Doorstep Tailor WAPDA Town Lahore, Tailor Near Me"
+        canonicalPath="/services/custom-stitching-lahore"
+      />
+
       {/* 1. HERO BANNER */}
       <section className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">
-          <img src="/tailor-workshop.png" alt="SastaDarzi Stitching Studio" className="w-full h-full object-cover opacity-30 filter brightness-75" />
+          <img src="/tailor-workshop.png" alt="SastaDarzi Custom Stitching Studio" className="w-full h-full object-cover opacity-30 filter brightness-75" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/95 via-[#1A1A1A]/70 to-[#1A1A1A]" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <h1 className="text-4xl md:text-6xl font-bold text-white font-serif tracking-tight drop-shadow-md leading-tight">
-            Premium Ladies Stitching<br />Services in Lahore
+            Custom Ladies Suit Stitching<br />Services in Lahore
           </h1>
+          <p className="text-gray-300 text-sm md:text-base mt-4 max-w-2xl mx-auto">
+            High-precision tailoring crafted by expert Lahori master tailors with doorstep fabric collection & home delivery.
+          </p>
         </div>
       </section>
 
@@ -82,7 +93,7 @@ export default function StitchingPage({ setActivePage }) {
         
         <div className="text-center space-y-2 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] font-serif">
-            Our Stitching Categories
+            Our Custom Stitching Categories
           </h2>
           <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
             Each category below is handled by specialized tailoring teams to ensure the perfect fit and finish.
@@ -132,18 +143,18 @@ export default function StitchingPage({ setActivePage }) {
               <div className="px-8 py-5 border-t border-gray-800 bg-[#1E1E1E] flex flex-wrap items-center justify-between gap-3 text-xs font-bold">
                 <span className="text-[#D4AF37]">{cat.delivery}</span>
                 <div className="flex items-center gap-3">
-                  <button 
-                    onClick={() => navTo(cat.id)}
+                  <Link 
+                    to={cat.path}
                     className="text-gray-300 hover:text-white underline flex items-center gap-1"
                   >
                     View Details
-                  </button>
-                  <button 
-                    onClick={() => navTo('book-appointment')}
+                  </Link>
+                  <Link 
+                    to="/book-ladies-tailor-appointment-lahore"
                     className="px-3.5 py-1.5 bg-[#D4AF37] text-black font-bold rounded hover:bg-yellow-500 transition flex items-center gap-1"
                   >
                     Book Now <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -153,7 +164,7 @@ export default function StitchingPage({ setActivePage }) {
 
       </section>
 
-      {/* 3. PICKUP & DELIVERY AVAILABLE ACROSS LAHORE (NO PRICING MENTIONED) */}
+      {/* 3. PICKUP & DELIVERY AVAILABLE ACROSS LAHORE */}
       <section className="py-20 px-6 bg-[#141414] border-t border-b border-gray-800/80">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -167,39 +178,23 @@ export default function StitchingPage({ setActivePage }) {
             </p>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-3.5 text-gray-300 font-semibold text-xs md:text-sm">
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> WAPDA Town
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> Gulberg
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> DHA Phases 1-9
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> Model Town
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> Johar Town
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> Faisal Town
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> Bahria Town
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#D4AF37]">•</span> Iqbal Town
-              </div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> WAPDA Town</div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> Gulberg</div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> DHA Phases 1-9</div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> Model Town</div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> Johar Town</div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> Faisal Town</div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> Bahria Town</div>
+              <div className="flex items-center gap-2"><span className="text-[#D4AF37]">•</span> Iqbal Town</div>
             </div>
 
             <div className="pt-2">
-              <button 
-                onClick={() => navTo('book-appointment')}
-                className="px-6 py-3 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider text-xs rounded transition shadow-md"
+              <Link 
+                to="/book-ladies-tailor-appointment-lahore"
+                className="px-6 py-3 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider text-xs rounded transition shadow-md inline-block"
               >
                 Schedule Doorstep Pickup
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -220,7 +215,6 @@ export default function StitchingPage({ setActivePage }) {
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Placeholder Box */}
           <div className="lg:col-span-6 bg-[#242424] border border-gray-800 rounded-2xl h-[340px] flex items-center justify-center text-gray-500 font-semibold shadow-xl relative overflow-hidden">
             <img src="/custom-stitching.png" alt="Stitching Process" className="w-full h-full object-cover opacity-60" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
@@ -228,7 +222,6 @@ export default function StitchingPage({ setActivePage }) {
             </div>
           </div>
 
-          {/* Right Steps */}
           <div className="lg:col-span-6 space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] font-serif">
               Seamless Stitching Process
@@ -249,12 +242,12 @@ export default function StitchingPage({ setActivePage }) {
             </div>
 
             <div className="pt-2">
-              <button 
-                onClick={() => navTo('book-appointment')}
-                className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider text-xs rounded transition shadow-lg"
+              <Link 
+                to="/book-ladies-tailor-appointment-lahore"
+                className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider text-xs rounded transition shadow-lg inline-block"
               >
                 Book Custom Stitching Now
-              </button>
+              </Link>
             </div>
           </div>
 

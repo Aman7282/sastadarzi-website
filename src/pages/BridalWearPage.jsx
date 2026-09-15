@@ -1,25 +1,12 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Star, ChevronRight, ShieldCheck, Sparkles, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle2, MessageSquare } from 'lucide-react';
 import { customerReviews } from '../data/reviewsData';
 import FAQSection from '../components/FAQSection';
+import SEOHead from '../components/SEOHead';
 
-export default function BridalWearPage({ setActivePage }) {
+export default function BridalWearPage() {
   const [activeReviewIdx, setActiveReviewIdx] = useState(0);
-
-  const navTo = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleNextReview = () => {
-    setActiveReviewIdx((prev) => (prev + 3 >= customerReviews.length ? 0 : prev + 3));
-  };
-
-  const handlePrevReview = () => {
-    setActiveReviewIdx((prev) => (prev - 3 < 0 ? Math.max(0, customerReviews.length - 3) : prev - 3));
-  };
-
-  const visibleReviews = customerReviews.slice(activeReviewIdx, activeReviewIdx + 3);
 
   const bridalFaqs = [
     { 
@@ -70,6 +57,13 @@ export default function BridalWearPage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Bridal Lehenga & Barat Suit Tailor in Lahore | Sasta Darzi"
+        description="Custom bridal lehenga stitching in Lahore. Barat 16-kali lehengas, Walima maxis, Mehndi shararas with built-in can-can net & doorstep pickup."
+        keywords="Bridal Lehenga Tailor Lahore, Barat Dress Stitching, Walima Gown Tailor Lahore, Designer Bridal Stitching Near Me, Ladies Tailor WAPDA Town Lahore"
+        canonicalPath="/services/bridal-lehenga-tailor-lahore"
+      />
+
       {/* HERO BANNER */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">
@@ -89,12 +83,12 @@ export default function BridalWearPage({ setActivePage }) {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-2">
-            <button 
-              onClick={() => navTo('book-appointment')}
-              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider rounded text-xs transition shadow-lg shadow-[#D4AF37]/20"
+            <Link 
+              to="/book-ladies-tailor-appointment-lahore"
+              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider rounded text-xs transition shadow-lg shadow-[#D4AF37]/20 inline-block"
             >
               Book Bridal Consultation
-            </button>
+            </Link>
             <a 
               href="https://wa.me/923158212978?text=Hello%20SastaDarzi,%20I%20want%20to%20inquire%20about%20Bridal%20Wear%20stitching." 
               target="_blank" 
@@ -148,9 +142,9 @@ export default function BridalWearPage({ setActivePage }) {
               </div>
               <div className="px-8 py-5 border-t border-gray-800 bg-[#1E1E1E] flex items-center justify-between text-xs font-bold">
                 <span className="text-[#D4AF37]">Delivery Time: 10-14 working days</span>
-                <button onClick={() => navTo('book-appointment')} className="text-[#D4AF37] hover:underline flex items-center gap-1">
+                <Link to="/book-ladies-tailor-appointment-lahore" className="text-[#D4AF37] hover:underline flex items-center gap-1">
                   Book Now <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -177,9 +171,9 @@ export default function BridalWearPage({ setActivePage }) {
               <div>• Bahria Town</div>
               <div>• Overseas Shipping (UK, USA, UAE)</div>
             </div>
-            <button onClick={() => navTo('book-appointment')} className="px-6 py-3 bg-[#D4AF37] text-black font-bold uppercase tracking-wider text-xs rounded">
+            <Link to="/book-ladies-tailor-appointment-lahore" className="px-6 py-3 bg-[#D4AF37] text-black font-bold uppercase tracking-wider text-xs rounded inline-block">
               Book Bridal Appointment
-            </button>
+            </Link>
           </div>
           <div className="lg:col-span-6 rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl h-[320px]">
             <iframe 

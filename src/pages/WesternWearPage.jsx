@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Star, ChevronRight, MessageSquare } from 'lucide-react';
-import { customerReviews } from '../data/reviewsData';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle2, MessageSquare } from 'lucide-react';
 import FAQSection from '../components/FAQSection';
+import SEOHead from '../components/SEOHead';
 
-export default function WesternWearPage({ setActivePage }) {
-  const [activeReviewIdx, setActiveReviewIdx] = useState(0);
-
-  const navTo = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+export default function WesternWearPage() {
   const westernFaqs = [
     { 
       q: 'What western outfits do you stitch?', 
@@ -48,43 +42,44 @@ export default function WesternWearPage({ setActivePage }) {
       img: '/stitched-dresses-2.png',
       desc: 'Asymmetric high-low evening dress with buttoned sleeve cuffs and boat neckline.',
       features: ['Invisible back zipper', 'Double overlock interior finish', 'Tear-proof seam locks']
-    },
-    {
-      title: 'Workwear Trousers & Silk Shirts',
-      img: '/dress-blue-silk.png',
-      desc: 'Clean tailored office trousers and button-down silk blouses crafted for professional fitting.',
-      features: ['Crease-resistant hem fold', 'Hand-stitched hook closure', 'Tailored waist fit']
     }
   ];
 
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Western Wear & Maxi Dress Tailor Lahore | Sasta Darzi"
+        description="Custom western wear, blazer, jumpsuit & maxi dress tailoring in Lahore with doorstep pickup across WAPDA Town, DHA & Gulberg."
+        keywords="Western Wear Tailor Lahore, Maxi Dress Tailor Lahore, Blazer Stitching Lahore, Ladies Tailor WAPDA Town Lahore, Tailor Near Me"
+        canonicalPath="/services/western-wear-tailor-lahore"
+      />
+
       {/* HERO BANNER */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">
-          <img src="/cat-western.png" alt="Western Wear Stitching Lahore" className="w-full h-full object-cover opacity-35 filter brightness-90" />
+          <img src="/cat-western.png" alt="Western Wear Tailor Lahore" className="w-full h-full object-cover opacity-35 filter brightness-85" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/95 via-[#1A1A1A]/70 to-[#1A1A1A]" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-6">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-4 py-1.5 rounded-full">
-            Global Style & Modern Silhouettes
+            Contemporary Global Fashion
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white font-serif tracking-tight drop-shadow-lg leading-tight">
-            Western Wear Stitching<br />Services in Lahore
+            Western Wear & Maxi Dress<br />Tailoring in Lahore
           </h1>
           <p className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            Look globally styled with our western wear stitching service — blazers, maxis, jumpsuits, and formal trousers crafted with precision cuts.
+            Blazers, jumpsuits, office wear & western maxis tailored with clean seams and modern silhouettes.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-2">
-            <button 
-              onClick={() => navTo('book-appointment')}
-              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider rounded text-xs transition shadow-lg shadow-[#D4AF37]/20"
+            <Link 
+              to="/book-ladies-tailor-appointment-lahore"
+              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider rounded text-xs transition shadow-lg inline-block"
             >
               Book Western Stitching
-            </button>
+            </Link>
             <a 
               href="https://wa.me/923158212978?text=Hello%20SastaDarzi,%20I%20want%20to%20inquire%20about%20Western%20Wear%20stitching." 
               target="_blank" 
@@ -94,14 +89,6 @@ export default function WesternWearPage({ setActivePage }) {
               <MessageSquare className="w-4 h-4" /> WhatsApp Us
             </a>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-6 text-xs text-gray-300 pt-4 border-t border-gray-800/80">
-            {['European Pattern Cuts', 'Canvas Shoulder Padding', '5-7 Day Delivery'].map((t) => (
-              <span key={t} className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" /> {t}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -109,23 +96,20 @@ export default function WesternWearPage({ setActivePage }) {
       <section className="py-20 px-6 max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-2 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] font-serif">
-            Western & Modern Collections
+            Western Wear Collection
           </h2>
-          <p className="text-gray-400 text-xs md:text-sm">
-            Crafted with European pattern drafting and clean interior seam locks.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {westernStyles.map((item, idx) => (
             <div key={idx} className="bg-[#242424] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#D4AF37]/50 transition duration-300 shadow-xl flex flex-col justify-between">
               <div>
-                <div className="h-64 sm:h-72 w-full overflow-hidden bg-black/40">
+                <div className="h-64 w-full overflow-hidden bg-black/40">
                   <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div className="p-8 space-y-4">
-                  <h3 className="text-2xl font-bold text-[#D4AF37] font-serif">{item.title}</h3>
-                  <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-[#D4AF37] font-serif">{item.title}</h3>
+                  <p className="text-gray-300 text-xs leading-relaxed">{item.desc}</p>
                   <ul className="space-y-2 text-xs text-gray-300 pt-2">
                     {item.features.map((f, i) => (
                       <li key={i} className="flex items-center gap-2">
@@ -136,18 +120,17 @@ export default function WesternWearPage({ setActivePage }) {
                   </ul>
                 </div>
               </div>
-              <div className="px-8 py-5 border-t border-gray-800 bg-[#1E1E1E] flex items-center justify-between text-xs font-bold">
-                <span className="text-[#D4AF37]">Delivery Time: 5-7 working days</span>
-                <button onClick={() => navTo('book-appointment')} className="text-[#D4AF37] hover:underline flex items-center gap-1">
-                  Book Now <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+              <div className="px-6 py-4 border-t border-gray-800 bg-[#1E1E1E] flex items-center justify-between text-xs font-bold">
+                <span className="text-[#D4AF37]">5-7 Days Delivery</span>
+                <Link to="/book-ladies-tailor-appointment-lahore" className="text-[#D4AF37] hover:underline flex items-center gap-1">
+                  Book <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* FREQUENTLY ASKED QUESTIONS */}
       <FAQSection faqs={westernFaqs} dark={true} title="Frequently Asked Questions" />
 
     </div>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Briefcase, CheckCircle2, MessageSquare, ArrowRight, PackageCheck, Layers, ShieldCheck } from 'lucide-react';
+import { Briefcase, CheckCircle2 } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
-export default function ForBrandsPage({ setActivePage }) {
+export default function ForBrandsPage() {
   const brandServices = [
     {
       title: 'Boutique Batch Stitching',
@@ -32,13 +33,20 @@ export default function ForBrandsPage({ setActivePage }) {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
       
+      <SEOHead 
+        title="Bulk Stitching Services for Boutique & Fashion Brands Lahore | Sasta Darzi"
+        description="B2B bulk stitching & garment manufacturing for clothing brands & boutiques in Lahore. Batch production, sample stitching & international export delivery."
+        keywords="Bulk Stitching Services Lahore, Boutique Stitching Manufacturer, Garment Factory Lahore, Clothing Brand Stitching, Tailor Near Me"
+        canonicalPath="/services/boutique-stitching-for-brands"
+      />
+
       {/* Title */}
-      <div className="text-center space-y-3 max-w-3xl mx-auto">
-        <span className="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-4 py-1.5 rounded-full border border-gold-500/30">
+      <div className="text-center space-y-3 max-w-3xl mx-auto pt-16">
+        <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] bg-[#D4AF37]/10 px-4 py-1.5 rounded-full border border-[#D4AF37]/30">
           B2B Wholesale & Production
         </span>
-        <h1 className="text-4xl font-extrabold font-serif">
-          Tailoring Manufacturing <span className="text-gold-gradient">For Brands & Boutiques</span>
+        <h1 className="text-4xl font-extrabold font-serif text-white">
+          Tailoring Manufacturing <span className="text-[#D4AF37]">For Brands & Boutiques</span>
         </h1>
         <p className="text-neutral-300 text-sm leading-relaxed">
           Partner with Lahore's premier ladies tailoring facility for small batch production, sample stitching, and bulk manufacturing.
@@ -48,13 +56,13 @@ export default function ForBrandsPage({ setActivePage }) {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {brandServices.map((b, idx) => (
-          <div key={idx} className="bg-obsidian-900 border border-gold-500/20 hover:border-gold-400 rounded-2xl p-8 space-y-6 transition flex flex-col justify-between">
+          <div key={idx} className="bg-neutral-900 border border-[#D4AF37]/20 hover:border-[#D4AF37] rounded-2xl p-8 space-y-6 transition flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-[10px] font-bold text-gold-400 uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/30">
+                <span className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-widest bg-[#D4AF37]/10 px-3 py-1 rounded-full border border-[#D4AF37]/30">
                   {b.qty}
                 </span>
-                <Briefcase className="w-5 h-5 text-gold-400" />
+                <Briefcase className="w-5 h-5 text-[#D4AF37]" />
               </div>
 
               <h3 className="text-2xl font-bold font-serif text-white">{b.title}</h3>
@@ -74,7 +82,7 @@ export default function ForBrandsPage({ setActivePage }) {
               href={`https://wa.me/923158212978?text=Hello%20Sasta%20Darzi,%20I%20represent%20a%20brand/boutique%20and%20want%20to%20inquire%20about%20${encodeURIComponent(b.title)}.`}
               target="_blank" 
               rel="noreferrer"
-              className="w-full py-3 bg-gold-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-gold-sm hover:brightness-110 transition text-center block"
+              className="w-full py-3 bg-[#D4AF37] text-black font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-yellow-500 transition text-center block"
             >
               Inquire Wholesale / Brand Terms
             </a>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { ArrowRight, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MessageSquare } from 'lucide-react';
 
-export default function PageHero({ tag, h1, lead, body, ctaLabel, ctaPage, setActivePage, bgImage, showWhatsapp = true }) {
+export default function PageHero({ tag, h1, lead, body, ctaLabel, ctaPath = '/book-ladies-tailor-appointment-lahore', bgImage, showWhatsapp = true }) {
   return (
     <section className="relative bg-black text-white overflow-hidden">
       {bgImage && (
@@ -21,12 +22,12 @@ export default function PageHero({ tag, h1, lead, body, ctaLabel, ctaPage, setAc
           {lead && <p className="text-lg text-yellow-300 font-medium">{lead}</p>}
           {body && <p className="text-base text-gray-300 leading-relaxed">{body}</p>}
           <div className="flex flex-wrap gap-4 pt-2">
-            <button
-              onClick={() => { setActivePage('book-appointment'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="px-6 py-3.5 bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-sm uppercase tracking-wide rounded-xl transition shadow-lg"
+            <Link
+              to={ctaPath}
+              className="px-6 py-3.5 bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-sm uppercase tracking-wide rounded-xl transition shadow-lg inline-block"
             >
               {ctaLabel || 'Get Started'}
-            </button>
+            </Link>
             {showWhatsapp && (
               <a
                 href="https://wa.me/923158212978?text=Hello%20SastaDarzi!"

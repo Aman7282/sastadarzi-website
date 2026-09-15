@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, MapPin, User, Mail, Phone, Scissors, CheckCircle2, Send, AlertCircle, FileText, Sparkles, MessageSquare, ChevronRight, ShieldCheck, X } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 export default function AppointmentPage({ setActivePage }) {
   const [formData, setFormData] = useState({
@@ -67,6 +68,13 @@ export default function AppointmentPage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-24">
       
+      <SEOHead 
+        title="Book Appointment | Best Ladies Tailor in Lahore"
+        description="Book your custom stitching appointment online. Request a doorstep fabric pickup from WAPDA Town, DHA, or Gulberg."
+        keywords="book ladies tailor in lahore, best ladies tailor near me, doorstep tailor appointment"
+        canonicalPath="/book-ladies-tailor-appointment-lahore"
+      />
+
       {/* 1. HERO BANNER */}
       <section className="relative min-h-[40vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">

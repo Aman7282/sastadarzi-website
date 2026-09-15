@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calculator, CheckCircle2, MessageSquare, ArrowRight, Info } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 export default function FabricCalculatorPage({ setActivePage }) {
   const [garment, setGarment] = useState('shalwar-kameez');
@@ -41,6 +42,13 @@ export default function FabricCalculatorPage({ setActivePage }) {
   return (
     <div className="max-w-7xl mx-auto px-4 pt-28 md:pt-36 pb-16 space-y-12">
       
+      <SEOHead 
+        title="Fabric Yardage Calculator | Best Ladies Tailor in Lahore"
+        description="Calculate the exact gaz, yards, or meters of fabric needed for your shalwar kameez, lehenga, maxi, or kurti. Never buy too much or too little fabric again!"
+        keywords="ladies tailor in lahore, fabric calculator for dresses, best ladies tailor near me, how much fabric for lehenga"
+        canonicalPath="/fabric-calculator"
+      />
+
       {/* Title */}
       <div className="text-center space-y-3 max-w-3xl mx-auto">
         <span className="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-4 py-1.5 rounded-full border border-gold-500/30">

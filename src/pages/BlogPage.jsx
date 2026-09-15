@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BookOpen, ArrowRight, Clock, User, Sparkles, Search, CheckCircle2 } from 'lucide-react';
 import FAQSection from '../components/FAQSection';
+import SEOHead from '../components/SEOHead';
 
 export default function BlogPage({ setActivePage }) {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -160,6 +161,13 @@ export default function BlogPage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Tailoring Blog & Tips | Ladies Tailor in Lahore"
+        description="Read our latest blog posts on custom dress stitching tips, bridal lehenga guides, and doorstep tailoring services in Lahore."
+        keywords="ladies tailor in lahore, dress stitching tips, best ladies tailor near me, tailoring blog"
+        canonicalPath="/blog-ladies-tailoring-tips-lahore"
+      />
+
       {/* 1. HERO BANNER */}
       <section className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">

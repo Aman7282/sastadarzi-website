@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Navigation, ArrowRight } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 export default function LocationPage({ setActivePage }) {
   const navTo = (pageId) => {
@@ -10,6 +11,13 @@ export default function LocationPage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Locations | Ladies Tailor in Wapda Town Lahore"
+        description="Visit Sasta Darzi at Wapda Town, Lahore, or request doorstep fabric pickup across DHA, Gulberg, and Johar Town."
+        keywords="ladies tailor in lahore, best ladies tailor near me, tailor in wapda town, ladies tailor location"
+        canonicalPath="/ladies-tailor-wapda-town-lahore-location"
+      />
+
       {/* 1. HERO BANNER */}
       <section className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">

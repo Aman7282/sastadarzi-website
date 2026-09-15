@@ -1,11 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-export default function Footer({ setActivePage }) {
-  const navTo = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default function Footer() {
+  const quickLinks = [
+    { label: 'Tailoring Services', path: '/services' },
+    { label: 'Custom Stitching', path: '/services/custom-stitching-lahore' },
+    { label: 'Ladies Alterations', path: '/services/ladies-alteration-lahore' },
+    { label: 'Bridal Lehenga Tailor', path: '/services/bridal-lehenga-tailor-lahore' },
+    { label: 'Fabric Calculator', path: '/fabric-calculator' },
+    { label: 'Our Work Portfolio', path: '/tailoring-work-portfolio-lahore' },
+    { label: 'About Sasta Darzi', path: '/about-best-ladies-tailor-lahore' },
+    { label: 'WAPDA Town Shop Location', path: '/ladies-tailor-wapda-town-lahore-location' },
+    { label: 'Book Appointment', path: '/book-ladies-tailor-appointment-lahore' }
+  ];
 
   return (
     <footer className="bg-[#141414] text-white pt-20 pb-8 border-t border-gray-800">
@@ -14,59 +22,53 @@ export default function Footer({ setActivePage }) {
           
           {/* Column 1: Brand */}
           <div className="space-y-4">
-            <div className="flex items-center cursor-pointer group mb-2" onClick={() => navTo('home')}>
+            <Link to="/" className="flex items-center group mb-2 inline-block">
               <img 
                 src="/logo.png" 
-                alt="SastaDarzi Logo" 
+                alt="SastaDarzi - Best Ladies Tailor in Lahore" 
                 className="h-14 md:h-16 w-auto object-contain filter brightness-110 drop-shadow-md group-hover:scale-105 transition-transform duration-300" 
               />
-            </div>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Sasta Darzi is a tailoring startup that offers premium custom tailoring services.
+              Sasta Darzi is Lahore's premier ladies tailor offering custom dress stitching, bridal couture, party wear, and doorstep fabric pickup across WAPDA Town, DHA, Gulberg, and Johar Town.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-white font-bold tracking-wide">Quick Links</h4>
-            <ul className="space-y-3">
-              {[
-                { label: 'Services', id: 'services' },
-                { label: 'Stitching Guide', id: 'fabric-calc' },
-                { label: 'About Us', id: 'about' },
-                { label: 'Location', id: 'location' },
-                { label: 'Book Appointment', id: 'book-appointment' }
-              ].map((link) => (
-                <li key={link.id}>
-                  <button onClick={() => navTo(link.id)} className="text-gray-400 hover:text-[#D4AF37] transition-colors text-sm">
+            <h4 className="text-white font-bold tracking-wide">Services & Links</h4>
+            <ul className="space-y-2.5">
+              {quickLinks.slice(0, 5).map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path} className="text-gray-400 hover:text-[#D4AF37] transition-colors text-sm">
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Info */}
+          {/* Column 3: Info & SEO Links */}
           <div className="space-y-6">
-            <h4 className="text-white font-bold tracking-wide">Info & Reviews</h4>
-            <ul className="space-y-3">
+            <h4 className="text-white font-bold tracking-wide">Explore Sasta Darzi</h4>
+            <ul className="space-y-2.5">
+              {quickLinks.slice(5).map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path} className="text-gray-400 hover:text-[#D4AF37] transition-colors text-sm">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <a href="https://g.page/r/CYROPMqivftrEAI/review" target="_blank" rel="noreferrer" className="text-[#D4AF37] hover:underline transition-colors text-sm font-semibold flex items-center gap-1">
+                <Link to="/blog-ladies-tailoring-tips-lahore" className="text-gray-400 hover:text-[#D4AF37] transition-colors text-sm">
+                  Tailoring Blog & Tips
+                </Link>
+              </li>
+              <li>
+                <a href="https://g.page/r/CYROPMqivftrEAI/review" target="_blank" rel="noreferrer" className="text-[#D4AF37] hover:underline transition-colors text-sm font-semibold flex items-center gap-1 mt-1">
                   ⭐ Google Reviews (4.8 ★)
                 </a>
               </li>
-              <li>
-                <button onClick={() => navTo('blog')} className="text-gray-400 hover:text-[#D4AF37] transition-colors text-sm">
-                  Blog
-                </button>
-              </li>
-              {['Privacy Policy', 'Terms & Conditions'].map((link) => (
-                <li key={link}>
-                  <button className="text-gray-400 hover:text-[#D4AF37] transition-colors text-sm">
-                    {link}
-                  </button>
-                </li>
-              ))}
             </ul>
           </div>
 
@@ -88,7 +90,7 @@ export default function Footer({ setActivePage }) {
               </li>
               <li className="flex items-start gap-3 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                Shop No 48 Ground Floor, Wapda, Rehmat Market, WAPDA Town Block A 1 Town, Lahore, 54770, Pakistan
+                Shop No 48 Ground Floor, Wapda, Rehmat Market, WAPDA Town Block K 1 Town, Lahore, 54770, Pakistan
               </li>
             </ul>
           </div>
@@ -97,7 +99,7 @@ export default function Footer({ setActivePage }) {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 text-center text-xs text-gray-500 tracking-wide">
-          <p>{new Date().getFullYear()} © Sasta Darzi. All rights reserved.</p>
+          <p>{new Date().getFullYear()} © Sasta Darzi | Best Ladies Tailor in Lahore. All rights reserved.</p>
         </div>
       </div>
     </footer>

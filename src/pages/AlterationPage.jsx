@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Star, ArrowRight } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import FAQSection from '../components/FAQSection';
 import RelatedServices from '../components/RelatedServices';
+import SEOHead from '../components/SEOHead';
 
 const faqs = [
   { q: 'What types of alterations do you do?', a: 'We handle length adjustments, waist fitting, side fitting, sleeve adjustments, trouser fitting, neck adjustments, daman adjustments and general fitting corrections.' },
@@ -13,14 +15,14 @@ const faqs = [
 ];
 
 const relatedLinks = [
-  { id: 'custom-stitching', label: 'Custom Stitching' },
-  { id: 'designing', label: 'Dress Designing' },
-  { id: 'bridal-wear', label: 'Bridal Wear' },
-  { id: 'formal-wear', label: 'Formal Wear' },
-  { id: 'contact', label: 'Request Alteration' },
+  { path: '/services/custom-stitching-lahore', label: 'Custom Stitching' },
+  { path: '/services/designer-dress-stitching', label: 'Dress Designing' },
+  { path: '/services/bridal-lehenga-tailor-lahore', label: 'Bridal Wear' },
+  { path: '/services/party-wear-stitching-lahore', label: 'Party Wear' },
+  { path: '/book-ladies-tailor-appointment-lahore', label: 'Request Alteration' },
 ];
 
-export default function AlterationPage({ setActivePage }) {
+export default function AlterationPage() {
   const alterationTypes = [
     'Length Adjustment', 'Waist Fitting', 'Side Fitting', 'Sleeve Adjustment',
     'Trouser Fitting', 'Neck Adjustment', 'Daman Adjustment', 'Loose or Tight Fitting'
@@ -33,13 +35,20 @@ export default function AlterationPage({ setActivePage }) {
   return (
     <div className="bg-white text-gray-900">
 
+      <SEOHead 
+        title="Best Ladies Alteration Service in Lahore | Sasta Darzi"
+        description="Expert ladies dress alteration & fitting in Lahore. Length adjustments, waist fitting, sleeve modifications & bridal dress alterations."
+        keywords="Ladies Alteration Service Lahore, Dress Fitting Near Me, Suit Alteration Lahore, Ladies Tailor WAPDA Town Lahore, Tailor Near Me"
+        canonicalPath="/services/ladies-alteration-lahore"
+      />
+
       <PageHero
         tag="Ladies Dress Alteration in Lahore"
         h1="Ladies Dress Alteration Services in Lahore"
         lead="A beautiful outfit can still feel wrong when the fitting isn't right."
-        body="Our alteration service helps improve the fit, length and finishing of women's clothing. Bring your outfit and tell us what needs to be changed."
+        body="Our alteration service helps improve the fit, length and finishing of women's clothing. Bring your outfit or schedule doorstep pickup."
         ctaLabel="Request an Alteration"
-        setActivePage={setActivePage}
+        ctaPath="/book-ladies-tailor-appointment-lahore"
         bgImage="/alteration-service.png"
         showWhatsapp={false}
       />
@@ -132,16 +141,15 @@ export default function AlterationPage({ setActivePage }) {
       <section className="py-16 bg-black text-white text-center">
         <div className="max-w-2xl mx-auto px-4 space-y-5">
           <h2 className="font-serif text-3xl font-bold">Need Your Dress Altered?</h2>
-          <p className="text-gray-300 text-sm">Bring your outfit to SastaDarzi and tell us what needs to be changed.</p>
-          <button onClick={() => { setActivePage('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-sm uppercase rounded-xl transition">
-            Contact Us
-          </button>
+          <p className="text-gray-300 text-sm">Bring your outfit to SastaDarzi or book doorstep pickup online.</p>
+          <Link to="/book-ladies-tailor-appointment-lahore" className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-sm uppercase rounded-xl transition inline-block">
+            Book Alteration Pickup
+          </Link>
         </div>
       </section>
 
       <FAQSection faqs={faqs} title="Ladies Alteration — Frequently Asked Questions" />
-      <RelatedServices links={relatedLinks} setActivePage={setActivePage} heading="Related Services" />
+      <RelatedServices links={relatedLinks} heading="Related Services" />
     </div>
   );
 }

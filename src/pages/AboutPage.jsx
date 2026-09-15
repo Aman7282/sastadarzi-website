@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Star, ChevronRight, CheckCircle2, ShieldCheck, Heart, Award } from 'lucide-react';
 import { customerReviews, googleReviewsSummary } from '../data/reviewsData';
+import SEOHead from '../components/SEOHead';
 
 export default function AboutPage({ setActivePage }) {
   const [activeReviewIdx, setActiveReviewIdx] = useState(0);
@@ -18,6 +19,13 @@ export default function AboutPage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="About Us | Best Ladies Tailor in Lahore | Sasta Darzi"
+        description="Sasta Darzi is a premium ladies tailoring service in Lahore. We stitch for Maria B, Khaadi, and provide doorstep pickup across Lahore."
+        keywords="ladies tailor in lahore, best ladies tailor near me, about sasta darzi, wapda town tailor"
+        canonicalPath="/about-best-ladies-tailor-lahore"
+      />
+
       {/* 1. HERO BANNER */}
       <section className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36">
         <div className="absolute inset-0 z-0">

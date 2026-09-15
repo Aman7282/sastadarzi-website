@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Star, ChevronRight, MessageSquare } from 'lucide-react';
-import { customerReviews } from '../data/reviewsData';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle2, MessageSquare } from 'lucide-react';
 import FAQSection from '../components/FAQSection';
+import SEOHead from '../components/SEOHead';
 
-export default function CasualWearPage({ setActivePage }) {
-  const [activeReviewIdx, setActiveReviewIdx] = useState(0);
-
-  const navTo = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+export default function CasualWearPage() {
   const casualFaqs = [
     { 
       q: 'What casual outfits do you stitch?', 
@@ -48,43 +42,44 @@ export default function CasualWearPage({ setActivePage }) {
       img: '/dress-blue-silk.png',
       desc: 'Trendy short kurti with tulip trouser cut and neat cuff finishing.',
       features: ['Elasticated waist band', 'Double-line seam lock', 'Designer button loop accents']
-    },
-    {
-      title: 'Loose-Fit Everyday Tunic',
-      img: '/dress-pink-maxi.png',
-      desc: 'Breathable cotton & khaddar loose tunic with boat neck cut and pocket detail.',
-      features: ['Concealed side pocket options', 'Tear-proof shoulder seams', 'Easy-care stitch finish']
     }
   ];
 
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Casual Lawn Suit & Shalwar Kameez Stitching Lahore | Sasta Darzi"
+        description="Everyday casual lawn suit & shalwar kameez stitching in Lahore. 2-piece & 3-piece suits with doorstep pickup across WAPDA Town, DHA & Gulberg."
+        keywords="Casual Suit Stitching Lahore, Lawn Suit Tailor Lahore, Shalwar Kameez Tailor Near Me, Online Darzi Lahore, Ladies Tailor WAPDA Town"
+        canonicalPath="/services/casual-suit-stitching-lahore"
+      />
+
       {/* HERO BANNER */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">
-          <img src="/cat-casual.png" alt="Casual Wear Stitching Lahore" className="w-full h-full object-cover opacity-35 filter brightness-90" />
+          <img src="/cat-casual.png" alt="Casual Suit Stitching Lahore" className="w-full h-full object-cover opacity-35 filter brightness-85" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/95 via-[#1A1A1A]/70 to-[#1A1A1A]" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-6">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-4 py-1.5 rounded-full">
-            Everyday Comfort & Lawn Stitching
+            Everyday Comfortable Wardrobe
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white font-serif tracking-tight drop-shadow-lg leading-tight">
-            Casual Wear Stitching<br />Services in Lahore
+            Casual Lawn Suit & Kameez<br />Stitching in Lahore
           </h1>
           <p className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            Elevate your everyday wardrobe with neatly stitched 2-piece and 3-piece lawn, cotton, and linen suits.
+            Neatly finished 2-piece and 3-piece daily wear lawn and linen suits stitched with precision.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-2">
-            <button 
-              onClick={() => navTo('book-appointment')}
-              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider rounded text-xs transition shadow-lg shadow-[#D4AF37]/20"
+            <Link 
+              to="/book-ladies-tailor-appointment-lahore"
+              className="px-8 py-3.5 bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold uppercase tracking-wider rounded text-xs transition shadow-lg inline-block"
             >
-              Book Casual Stitching
-            </button>
+              Book Casual Suit Stitching
+            </Link>
             <a 
               href="https://wa.me/923158212978?text=Hello%20SastaDarzi,%20I%20want%20to%20inquire%20about%20Casual%20Wear%20stitching." 
               target="_blank" 
@@ -94,14 +89,6 @@ export default function CasualWearPage({ setActivePage }) {
               <MessageSquare className="w-4 h-4" /> WhatsApp Us
             </a>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-6 text-xs text-gray-300 pt-4 border-t border-gray-800/80">
-            {['Fabric Shrinkage Handling', 'Razor Sharp Hemlines', 'Quick 3-5 Day Turnaround'].map((t) => (
-              <span key={t} className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" /> {t}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -109,23 +96,23 @@ export default function CasualWearPage({ setActivePage }) {
       <section className="py-20 px-6 max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-2 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] font-serif">
-            Casual & Daily Wear Collections
+            Casual Wear Styles
           </h2>
           <p className="text-gray-400 text-xs md:text-sm">
-            Quick turnaround time with clean finishing and durable seam locks.
+            Quick 3 to 5 day turnaround with clean seam locks and comfortable fits.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {casualStyles.map((item, idx) => (
             <div key={idx} className="bg-[#242424] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#D4AF37]/50 transition duration-300 shadow-xl flex flex-col justify-between">
               <div>
-                <div className="h-64 sm:h-72 w-full overflow-hidden bg-black/40">
+                <div className="h-64 w-full overflow-hidden bg-black/40">
                   <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div className="p-8 space-y-4">
-                  <h3 className="text-2xl font-bold text-[#D4AF37] font-serif">{item.title}</h3>
-                  <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                <div className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-[#D4AF37] font-serif">{item.title}</h3>
+                  <p className="text-gray-300 text-xs leading-relaxed">{item.desc}</p>
                   <ul className="space-y-2 text-xs text-gray-300 pt-2">
                     {item.features.map((f, i) => (
                       <li key={i} className="flex items-center gap-2">
@@ -136,18 +123,17 @@ export default function CasualWearPage({ setActivePage }) {
                   </ul>
                 </div>
               </div>
-              <div className="px-8 py-5 border-t border-gray-800 bg-[#1E1E1E] flex items-center justify-between text-xs font-bold">
-                <span className="text-[#D4AF37]">Delivery Time: 3-5 working days</span>
-                <button onClick={() => navTo('book-appointment')} className="text-[#D4AF37] hover:underline flex items-center gap-1">
-                  Book Now <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+              <div className="px-6 py-4 border-t border-gray-800 bg-[#1E1E1E] flex items-center justify-between text-xs font-bold">
+                <span className="text-[#D4AF37]">3-5 Days Delivery</span>
+                <Link to="/book-ladies-tailor-appointment-lahore" className="text-[#D4AF37] hover:underline flex items-center gap-1">
+                  Book <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* FREQUENTLY ASKED QUESTIONS */}
       <FAQSection faqs={casualFaqs} dark={true} title="Frequently Asked Questions" />
 
     </div>

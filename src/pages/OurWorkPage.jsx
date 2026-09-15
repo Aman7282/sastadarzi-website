@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Scissors, Sparkles, CheckCircle2, MessageSquare, X, Eye, ArrowRight, MapPin, Search } from 'lucide-react';
 import FAQSection from '../components/FAQSection';
+import SEOHead from '../components/SEOHead';
 
 export default function OurWorkPage({ setActivePage }) {
   const [filter, setFilter] = useState('all');
@@ -138,6 +139,60 @@ export default function OurWorkPage({ setActivePage }) {
       desc: 'Rack of custom stitched partywear including gold embroidered gown, yellow resham tunic, and emerald green suit.',
       qualityNotes: 'Full inner satin lining, hand-attached pearl buttons, double seam lock',
       img: '/stitched-dresses-2.png'
+    },
+    {
+      id: 13,
+      title: 'Olive Green Embroidered Sharara Suit',
+      category: 'formal',
+      categoryLabel: 'Embroidered Formal',
+      desc: 'Olive green chiffon shirt with intricate silver resham threadwork running down vertical panels, finished with a decorative bow belt accent and a pleated metallic sharara.',
+      qualityNotes: 'Dense resham threadwork on organza base, bow belt hand-stitched, pleated sharara precision-cut',
+      img: '/portfolio-olive-embroidered.jpg'
+    },
+    {
+      id: 14,
+      title: 'Black & White Abstract Print Kaftan',
+      category: 'abaya',
+      categoryLabel: 'Printed Kaftan Maxi',
+      desc: 'Striking black satin kaftan with bold white abstract leaf-print, V-neckline with silver chain trim edging, and dramatic batwing sleeves for an effortlessly glamorous look.',
+      qualityNotes: 'Satin print preservation, silver chain neckline finish, overlock batwing hem',
+      img: '/portfolio-black-printed-kaftan.png'
+    },
+    {
+      id: 15,
+      title: 'Rose Pink Shimmer Column Gown',
+      category: 'maxi',
+      categoryLabel: 'Shimmer Party Gown',
+      desc: 'Floor-length rose pink shimmer fabric column gown with a structured high-mock neck, cold-shoulder cut-out sleeves, and a sleek fitted silhouette perfect for formal events.',
+      qualityNotes: 'Shimmer fabric flat-seam stitching, structured mock neck interfacing, cold-shoulder sleeve precision',
+      img: '/portfolio-pink-shimmer-gown.jpg'
+    },
+    {
+      id: 16,
+      title: 'White Cutwork Lace Formal Suit',
+      category: 'formal',
+      categoryLabel: 'Cutwork Lace Formal',
+      desc: 'Elegant ivory white cutwork lace dupatta and shirt set with delicate floral motif hand-stitching and colourful resham flower accents — a signature SastaDarzi studio piece.',
+      qualityNotes: 'Hand-preserved cutwork lace edges, resham floral appliqué, silk inner lining',
+      img: '/portfolio-white-cutwork-suit.jpg'
+    },
+    {
+      id: 17,
+      title: 'Dusty Pink Floral Satin Blouse',
+      category: 'casual',
+      categoryLabel: 'Floral Satin Blouse',
+      desc: 'Soft dusty pink satin blouse with a vibrant floral print, elegant pussy-bow neck tie, button-down front placket, and shirred wrist cuffs — a refined everyday staple.',
+      qualityNotes: 'Satin print alignment at seams, self-fabric pussy-bow, shirred cuff finish',
+      img: '/portfolio-floral-blouse.jpg'
+    },
+    {
+      id: 18,
+      title: 'Teal Emerald Sequin Trail Gown',
+      category: 'bridal',
+      categoryLabel: 'Couture Sequin Gown',
+      desc: 'Breathtaking teal emerald full-length gown with dense geometric silver sequin embellishment, V-neckline, sheer organza long sleeves, pearl waist band detail, and a dramatic trailing hem.',
+      qualityNotes: 'Hand-sewn geometric sequin layout, pearl-studded waistband, sheer sleeve overlock finish, trail hem reinforced lining',
+      img: '/portfolio-teal-sequin-gown.jpg'
     }
   ];
 
@@ -148,6 +203,13 @@ export default function OurWorkPage({ setActivePage }) {
   return (
     <div className="bg-[#1A1A1A] text-white font-sans selection:bg-yellow-500 selection:text-black pb-20">
       
+      <SEOHead 
+        title="Our Work Portfolio | Ladies Tailor in Lahore"
+        description="View our custom stitched dresses, bridal lehengas, party maxis, and casual lawn suits. See our quality finish and craftsmanship."
+        keywords="ladies tailor in lahore, boutique stitching portfolio, bridal dress portfolio, best ladies tailor near me"
+        canonicalPath="/tailoring-work-portfolio-lahore"
+      />
+
       {/* 1. HERO BANNER */}
       <section className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36 pb-16">
         <div className="absolute inset-0 z-0">
