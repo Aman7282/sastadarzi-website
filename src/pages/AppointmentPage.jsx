@@ -23,7 +23,7 @@ export default function AppointmentPage() {
     garmentType: 'Shalwar Kameez',
     serviceType: 'Custom Stitching',
     appointmentDate: '',
-    timeSlot: 'Morning (10 AM – 1 PM)',
+    timeSlot: 'Morning (9 AM – 12 PM)',
     // Home pickup only
     pickupAddress: '',
     sector: 'WAPDA Town',
@@ -242,21 +242,39 @@ export default function AppointmentPage() {
 
           {/* Home mode charge notice */}
           {serviceMode === 'home' && (
-            <div className="p-3.5 bg-amber-500/10 border border-amber-500/40 rounded-xl flex items-start gap-2.5 text-xs">
-              <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-              <p className="text-amber-200 leading-relaxed">
-                <strong className="text-amber-400">Pickup & delivery fees are charged separately</strong> and are not included in the stitching price. Our team will confirm the charges with you via WhatsApp before proceeding.
-              </p>
+            <div className="p-3.5 bg-amber-500/10 border border-amber-500/40 rounded-xl space-y-2 text-xs">
+              <div className="flex items-start gap-2.5">
+                <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-amber-200 leading-relaxed">
+                  <strong className="text-amber-400">Pickup & delivery fees are charged separately</strong> and are not included in the stitching price. Our team confirms charges via WhatsApp before proceeding.
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5 pl-6">
+                <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <div className="text-amber-100/80 space-y-0.5">
+                  <p><strong className="text-amber-400">Pickup Hours — Weekdays (Mon–Fri):</strong> 9:00 AM – 10:00 PM</p>
+                  <p><strong className="text-amber-400">Pickup Hours — Weekends (Sat–Sun):</strong> 9:00 AM – 5:00 PM</p>
+                </div>
+              </div>
             </div>
           )}
 
           {/* Shop mode info */}
           {serviceMode === 'shop' && (
-            <div className="p-3.5 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl flex items-start gap-2.5 text-xs">
-              <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-              <p className="text-yellow-100/80 leading-relaxed">
-                <strong className="text-[#D4AF37]">Shop Address:</strong> Shop No 48, Ground Floor, Rehmat Market, WAPDA Town Block K-1, Lahore. Open 10 AM – 9 PM daily.
-              </p>
+            <div className="p-3.5 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl space-y-2 text-xs">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                <p className="text-yellow-100/80 leading-relaxed">
+                  <strong className="text-[#D4AF37]">Shop Address:</strong> Shop No 48, Ground Floor, Rehmat Market, WAPDA Town Block K-1, Lahore.
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Clock className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                <div className="text-yellow-100/80 leading-relaxed space-y-0.5">
+                  <p><strong className="text-[#D4AF37]">Weekdays (Mon–Fri):</strong> 9:00 AM – 10:00 PM</p>
+                  <p><strong className="text-[#D4AF37]">Weekends (Sat–Sun):</strong> 9:00 AM – 5:00 PM</p>
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -392,9 +410,17 @@ export default function AppointmentPage() {
                     <Clock className="w-4 h-4 text-gray-600 absolute left-3 top-3.5" />
                     <select name="timeSlot" value={formData.timeSlot} onChange={handleChange}
                       className={`${selectClass} pl-9`}>
-                      <option>Morning (10 AM – 1 PM)</option>
-                      <option>Afternoon (2 PM – 5 PM)</option>
-                      <option>Evening (6 PM – 9 PM)</option>
+                      <optgroup label="Weekdays (Mon–Fri) — 9 AM to 10 PM">
+                        <option>Morning — 9:00 AM to 12:00 PM</option>
+                        <option>Afternoon — 12:00 PM to 4:00 PM</option>
+                        <option>Evening — 4:00 PM to 7:00 PM</option>
+                        <option>Night — 7:00 PM to 10:00 PM</option>
+                      </optgroup>
+                      <optgroup label="Weekends (Sat–Sun) — 9 AM to 5 PM">
+                        <option>Weekend Morning — 9:00 AM to 12:00 PM</option>
+                        <option>Weekend Afternoon — 12:00 PM to 3:00 PM</option>
+                        <option>Weekend Late — 3:00 PM to 5:00 PM</option>
+                      </optgroup>
                     </select>
                   </div>
                 </div>
@@ -429,6 +455,79 @@ export default function AppointmentPage() {
           </form>
         )}
       </section>
+
+      {/* ─── FAQ SECTION — White Background ─── */}
+      <section className="mt-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 py-16 space-y-10">
+          <div className="text-center space-y-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">Got Questions?</span>
+            <h2 className="text-3xl font-bold text-gray-900 font-serif">Frequently Asked Questions</h2>
+            <p className="text-gray-500 text-sm">Everything you need to know before booking your appointment.</p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: 'What are your pickup & delivery hours?',
+                a: 'Our rider is available for doorstep fabric pickup and delivery from Monday to Friday between 9:00 AM and 10:00 PM. On weekends (Saturday & Sunday) pickup is available from 9:00 AM to 5:00 PM only.'
+              },
+              {
+                q: 'Are pickup and delivery free of charge?',
+                a: 'No — pickup and delivery are separate paid services and are not included in the stitching price. Our team will confirm the exact charges for your area via WhatsApp before we proceed.'
+              },
+              {
+                q: 'Can I visit the shop instead of home pickup?',
+                a: 'Absolutely! You are welcome to visit our studio at Shop No 48, Ground Floor, Rehmat Market, WAPDA Town Block K-1, Lahore. Shop hours are 9 AM–10 PM on weekdays and 9 AM–5 PM on weekends.'
+              },
+              {
+                q: 'How long does stitching take?',
+                a: 'Standard stitching orders are completed in 7 to 10 working days after fabric collection. Bridal and heavy formal wear may take 2 to 3 weeks. Express delivery is available on request.'
+              },
+              {
+                q: 'How will I receive confirmation of my booking?',
+                a: 'Once you submit the form, our team will contact you within a few hours via WhatsApp or phone call to confirm your appointment, discuss requirements, and share pickup/delivery charges.'
+              },
+              {
+                q: 'Can I share a design reference photo?',
+                a: 'Yes! You can mention your design preferences in the notes field, or send reference images directly to our WhatsApp after booking. We replicate necklines, sleeves, daman borders and full outfits from photos.'
+              },
+              {
+                q: 'Do you stitch branded unstitched suits?',
+                a: 'Yes, we stitch all types of unstitched fabric including lawn, chiffon, organza, velvet, khaddar, and raw silk — including branded designer suits from Maria B, Zara Shahjahan, Sana Safinaz, etc.'
+              },
+            ].map(({ q, a }, i) => (
+              <FaqItem key={i} question={q} answer={a} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}
+
+function FaqItem({ question, answer }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div className={`border rounded-xl overflow-hidden transition-all duration-200 ${
+      open ? 'border-[#D4AF37] shadow-md' : 'border-gray-200'
+    }`}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition"
+      >
+        <span className={`font-semibold text-sm leading-snug ${
+          open ? 'text-[#b8960c]' : 'text-gray-900'
+        }`}>{question}</span>
+        <span className={`ml-4 shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-transform duration-200 ${
+          open ? 'bg-[#D4AF37] text-black rotate-45' : 'bg-gray-100 text-gray-500'
+        }`}>+</span>
+      </button>
+      {open && (
+        <div className="px-6 pb-5 bg-white">
+          <p className="text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">{answer}</p>
+        </div>
+      )}
     </div>
   );
 }
