@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../emailjsConfig';
 import { Calendar, Clock, MapPin, User, Mail, Phone, Scissors, CheckCircle2, Send, AlertCircle, FileText, Sparkles, MessageSquare, ChevronRight, ShieldCheck, X } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 
@@ -27,21 +29,74 @@ export default function AppointmentPage({ setActivePage }) {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [refId] = useState(`SD-${Math.floor(Math.random() * 90000) + 10000}`);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setEmailError(false);
 
-    // Simulate form submission to sastadarzi@gmail.com
-    setTimeout(() => {
+    const measurementLabel =
+      formData.measurementType === 'standard'
+        ? `Standard Size — ${formData.standardSize}`
+        : formData.measurementType === 'pickup'
+        ? 'Sample Garment Doorstep Pickup'
+        : 'Custom Measurements Provided';
+
+    const templateParams = {
+      reference_id:      refId,
+      client_name:       formData.fullName,
+      client_phone:      formData.phone,
+      client_email:      formData.email,
+      service_type:      formData.serviceType,
+      garment_category:  formData.garmentCategory,
+      measurement_type:  measurementLabel,
+      chest:             formData.chest       || '-',
+      waist:             formData.waist       || '-',
+      hips:              formData.hips        || '-',
+      shoulder:          formData.shoulder    || '-',
+      sleeve_length:     formData.sleeveLength || '-',
+      shirt_length:      formData.shirtLength  || '-',
+      pickup_address:    formData.pickupAddress || 'Not specified',
+      sector:            formData.sector,
+      appointment_date:  formData.appointmentDate || 'ASAP',
+      time_slot:         formData.timeSlot,
+      design_notes:      formData.designNotes  || 'None',
+    };
+
+    try {
+      // 1️⃣ Send full booking details to admin
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.ADMIN_TEMPLATE_ID,
+        { ...templateParams, to_email: EMAILJS_CONFIG.ADMIN_EMAIL },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      // 2️⃣ Send confirmation copy to customer
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.USER_TEMPLATE_ID,
+        { ...templateParams, to_email: formData.email },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
       setLoading(false);
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 800);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setEmailError(true);
+      setLoading(false);
+      // Still mark as submitted so user sees booking summary
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const sendWhatsAppCopy = () => {
@@ -107,15 +162,28 @@ export default function AppointmentPage({ setActivePage }) {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold text-white font-serif">Appointment Request Received!</h2>
               <p className="text-gray-300 text-sm max-w-lg mx-auto leading-relaxed">
-                Thank you <strong className="text-[#D4AF37]">{formData.fullName}</strong>. Your detailed stitching booking has been dispatched to <span className="underline text-white font-semibold">sastadarzi@gmail.com</span>.
+                Thank you <strong className="text-[#D4AF37]">{formData.fullName}</strong>. Your booking has been submitted.
               </p>
             </div>
+
+            {/* Email status */}
+            {emailError ? (
+              <div className="max-w-xl mx-auto p-3.5 bg-amber-500/10 border border-amber-500/40 rounded-xl text-xs text-amber-200 flex items-start gap-2">
+                <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <span>Automatic email could not be sent right now. <strong>Please use the WhatsApp button below</strong> to confirm your booking with us directly — we'll respond within minutes.</span>
+              </div>
+            ) : (
+              <div className="max-w-xl mx-auto p-3.5 bg-emerald-600/10 border border-emerald-500/40 rounded-xl text-xs text-emerald-200 flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>✅ Confirmation email sent to <strong>{formData.email}</strong> and booking details sent to <strong>sastadarzi@gmail.com</strong>.</span>
+              </div>
+            )}
 
             {/* Booking Summary Box */}
             <div className="bg-[#1A1A1A] border border-gray-800 rounded-xl p-6 max-w-xl mx-auto text-left space-y-3 text-xs">
               <div className="flex justify-between border-b border-gray-800 pb-2">
                 <span className="text-gray-400">Reference ID:</span>
-                <span className="text-[#D4AF37] font-bold">#SD-{(Math.floor(Math.random() * 90000) + 10000)}</span>
+                <span className="text-[#D4AF37] font-bold">{refId}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-400">Selected Service:</span>
