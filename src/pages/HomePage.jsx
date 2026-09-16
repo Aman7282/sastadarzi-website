@@ -287,7 +287,7 @@ export default function HomePage() {
                       <Star key={j} className="w-4 h-4 fill-[#D4AF37]" />
                     ))}
                     <span className="text-xs text-gray-400 font-bold ml-2 flex items-center gap-1">
-                      Verified Google Review <ExternalLink className="w-3 h-3 text-[#D4AF37]" />
+                      Verified Google Review <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
                     </span>
                   </div>
 

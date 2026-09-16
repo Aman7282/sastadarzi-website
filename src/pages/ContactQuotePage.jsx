@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin, MessageSquare, Clock, Globe, Send, CheckCircle2, Scissors, UserCheck } from 'lucide-react';
 
 export default function ContactQuotePage() {

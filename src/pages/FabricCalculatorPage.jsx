@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Calculator, CheckCircle2, MessageSquare, ArrowRight, Info } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Briefcase, CheckCircle2 } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 
