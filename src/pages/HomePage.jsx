@@ -315,7 +315,7 @@ export default function HomePage() {
                 rel="noreferrer"
                 className="text-xs font-bold text-[#1A1A1A] bg-[#D4AF37] border border-[#D4AF37] px-5 py-2.5 rounded-lg hover:bg-yellow-500 transition flex items-center gap-2 shadow-md"
               >
-                <ExternalLink className="w-4 h-4" /> Rate Us on Google My Business
+                <ChevronRight className="w-4 h-4" /> Rate Us on Google My Business
               </a>
             </div>
 
