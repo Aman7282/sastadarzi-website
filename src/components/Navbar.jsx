@@ -158,12 +158,11 @@ export default function Navbar() {
 
         {/* Right CTA Button */}
         <div className="hidden lg:block">
-          <Link 
-            to="/book-ladies-tailor-appointment-lahore"
+          <a 
+            href="tel:+923158212978"
             className="px-6 py-2.5 bg-[#D4AF37] hover:bg-yellow-500 text-black text-[13px] font-bold uppercase tracking-wider rounded transition-all duration-300 shadow-md hover:shadow-lg inline-block"
           >
-            Book An Appointment
-          </Link>
+            Call Now</a>
         </div>
 
         {/* Mobile toggle */}
@@ -231,13 +230,12 @@ export default function Navbar() {
             Location
           </Link>
 
-          <Link 
-            to="/book-ladies-tailor-appointment-lahore"
+          <a 
+            href="tel:+923158212978"
             onClick={closeMobileMenu}
             className="block text-center w-full mt-4 px-6 py-3 bg-[#D4AF37] text-black text-[13px] font-bold uppercase tracking-wider rounded shadow-md"
           >
-            Book An Appointment
-          </Link>
+            Call Now</a>
         </div>
       )}
     </header>

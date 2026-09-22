@@ -63,10 +63,11 @@ export default function HomePage() {
               Book Custom Stitching
             </Link>
             <a
-              href="tel:+923158212978"
+              href="https://customer.sastadarzi.com/user/login"
+              target="_blank" rel="noopener noreferrer"
               className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded text-sm transition-colors border border-emerald-400/40 flex items-center gap-2 shadow-lg"
             >
-              <Phone className="w-4 h-4 text-white" /> Call Now
+              Get Started Now
             </a>
           </div>
         </div>
